@@ -1,0 +1,21 @@
+.inputch{
+    margin-top: 20px;
+}
+
+.inputch__content{
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: teal;
+    margin: 0 auto;
+}
+
+.inputch__title{
+    color: #fff;
+}
+
+.inputch__content button{
+    border: 3px solid orange;
+    background-color: transparent;
+    color: #fff;
+    margin-left: 5px;
+}

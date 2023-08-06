@@ -1,0 +1,28 @@
+.types{
+    margin-top: 20px;
+}
+.types__content{
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: purple;
+    margin: 0 auto;
+}
+
+.types__title{
+    color: #fff;
+}
+
+.types__btns{
+    display: flex;
+    align-items: center;
+}
+
+.types__btns button:not(:last-child){
+    margin-right: 5px;
+}
+  
+.types__btns button{
+    border: 3px solid orange;
+    background-color: transparent;
+    color: #fff;
+}

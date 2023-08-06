@@ -1,0 +1,93 @@
+import { useRef, useState } from 'react';
+import './App.css';
+import Timer from './components/Time';
+
+function App() {
+
+        let UPDATE_INTERVAL = 1000;
+
+        const timeRef = useRef(null);
+        const timeSc = useRef(0)
+
+        const [time, setTime] = useState(0);
+        const timmer = {sc:0, min:0, hr:0}
+        const start = () => {
+        timeRef.current = setInterval(() => {
+          setTime((prev) =>prev + 1);
+        }, UPDATE_INTERVAL);
+
+
+          };
+        let lo = ''
+        const stop = () =>{
+          clearInterval(timeRef.current)
+        }
+
+        const reset = () =>{
+          setTime((prev) =>prev = 0)
+          lo = ''
+          loape.current.innerHTML = lo
+        }
+
+        const loape = useRef()
+        console.log(loape);
+
+        const loap = (timmer, time) =>{
+          console.log(time);
+          timmer.hr = Math.floor(time / 60 / 60);
+          timmer.min = Math.floor(time / 60) - (timmer.hr * 60);
+          timmer.sc = time % 60
+          lo += ` <div class="loap"> ${timmer.hr} : ${timmer.min} : ${timmer.sc} </div>`
+          loape.current.innerHTML = lo
+        }
+
+          return (
+            <div className="App">
+              <Timer time={time} ref={timeRef}/>
+              <div className='loaps' ref={loape}>
+
+              </div>
+              <div className='buttons'>
+              <span style={{display: "none"}}  ref={timeRef}>{time}</span>
+                <button className='button' onClick={start}>Start</button>
+                <button className='button' onClick={stop}>Stop</button>
+                <button className='button' onClick={reset}>Reset</button>
+                <button className='button' onClick={()=>{loap(timmer,time)}}>Loap</button>
+              </div>
+            </div>
+          );
+}
+
+export default App;
+
+
+import React from "react";
+
+const Time = (time, {get}) =>{
+    const timmer = {sc:0, min:0, hr:0}
+
+const resTime =(time)=>{
+    if(time.time == 0){
+        timmer.sc = time.time
+        return timmer
+    }
+    else{
+        console.log('111');
+        console.log(time.time);
+        timmer.hr = Math.floor(time.time / 60 / 60);
+        timmer.min = Math.floor(time.time / 60) - (timmer.hr * 60);
+        timmer.sc = time.time % 60
+        console.log(timmer.sc);
+        return timmer
+        
+    }
+}
+    resTime(time)
+    return(
+        <div className='time'>
+            <span>{timmer.hr}</span>:<span>{timmer.min}</span>:<span>{timmer.sc}</span>
+        </div>
+    )
+}
+
+export default Time

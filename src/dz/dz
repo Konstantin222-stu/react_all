@@ -1,0 +1,37 @@
+const timeSc = useRef(0)
+<span ref={timeRef}></span>
+
+const [title, setTitle] = useState("");
+setTitle("Привет")
+
+
+const Title = createContext(null)
+<Title.Provider value={{title,setTitle}}>
+<Component>
+    const setter = useContext({setTitle}) 
+</Component>
+</Title.Provider>
+
+useEffect(()=>{
+    setTitle(newTitle(titleUpdate))
+},[title])
+
+useEffect(()=>{
+    setTitle(title)
+},[])
+
+useEffect(()=>{
+    setTitle(title)
+    return ()=>{
+        setTitle('')
+    }
+},[])
+
+useMemo(()=>{
+    titleUpdate
+},[title])
+
+useCallback(()=>{
+    titleUpdate
+},[title])
+

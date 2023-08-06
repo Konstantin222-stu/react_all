@@ -1,0 +1,23 @@
+.messages{margin-top: 20px;}
+.message__content{
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: teal;
+    margin: 0 auto;
+}
+
+.messages__message{
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+}
+
+.messages__title{
+    color: #fff;
+}
+
+.messages__btn{
+    border: 3px solid orange;
+    background-color: transparent;
+    color: #fff;
+}

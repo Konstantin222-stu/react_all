@@ -1,0 +1,25 @@
+.counter__content{
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: teal;
+    margin: 0 auto;
+}
+  
+.counter__title{
+    color: #fff;
+}
+  
+.counter__btns{
+    display: flex;
+    align-items: center;
+}
+  
+.counter__btns button:not(:last-child){
+    margin-right: 5px;
+}
+  
+.counter__btns button{
+    border: 3px solid orange;
+    background-color: transparent;
+    color: #fff;
+}
